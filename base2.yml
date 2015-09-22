@@ -1,10 +1,9 @@
 - question: Из чего можно получить логические ( булевые ) значения?
   level: 1
   variants:
-    - из операторов отношения
+    - из операций сравнения
     - из логических операций
     - из арифметических операций
-    - из унарных операций
 
 - question: Какие из ниже приведённых операций являются операциями сравнения?
   level: 1
@@ -22,7 +21,7 @@
     - nor
     - xor
 
-- question: Какой тип данных можно выбрать для хранения логичского значения?
+- question: Какой тип данных можно выбрать для хранения логического значения?
   level: 1
   variants:
     - Integer
@@ -30,21 +29,13 @@
     - Char
     - Boolean
 
-- question: Как выглядит условный оператор?
+- question: Как может выглядеть условный оператор?
   level: 2
   variants:
     - \verb|if <condition> then <operation>;|
     - \verb|if <condition> then <operation> else <operation>;|
     - \verb|if <condition> then <operation> else if <operation>;|
     - \verb|if <condition>; then <operation>; else <operation>;|
-
-- question: Сколько операций можно выполнить после проверки условия ( без блока begin )?
-  level: 2
-  variants:
-    - 1
-    - 2
-    - сколько угодно
-    - 42
 
 - question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A xor true then Write('Привет!');|?
   level: 2
@@ -81,10 +72,10 @@
   code: |
     begin
       case 5 of
-        1, 2, 3 : writeln ('Первый квартал');
-        4, 5, 6 : writeln ('Второй квартал');
+        1..3 : writeln ('Первый квартал');
+        4, 5..6 : writeln ('Второй квартал');
         7, 8, 9 : writeln ('Третий квартал');
-        10, 11, 12 : writeln ('Четвёртый квартал');
+        10..11, 12 : writeln ('Четвёртый квартал');
         else writeln ('Очень плохой месяц');
       end;
     end.
@@ -99,11 +90,11 @@
     - Очень плохой месяц
   code: |
     begin
-      case 5 of
-        1, 2, 3 : writeln ('Первый квартал');
-        3, 4, 5 : writeln ('Второй квартал');
-        5, 6, 7 : writeln ('Третий квартал');
-        7, 8, 9 : writeln ('Четвёртый квартал');
+      case 11 of
+        1..3    : writeln ('Первый квартал');
+        4..6    : writeln ('Второй квартал');
+        7, 8, 9 : writeln ('Третий квартал');
+        10, 12  : writeln ('Четвёртый квартал');
         else writeln ('Очень плохой месяц');
       end;
     end.
@@ -114,7 +105,6 @@
     - Нечётное
     - Чётное
     - Не число
-    -
   code: |
     begin
       case (42 mod 2) of
