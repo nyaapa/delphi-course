@@ -1,0 +1,125 @@
+- question: Из чего можно получить логические ( булевые ) значения?
+  level: 1
+  variants:
+    - из операторов отношения
+    - из логических операций
+    - из арифметических операций
+    - из унарных операций
+
+- question: Какие из ниже приведённых операций являются операциями сравнения?
+  level: 1
+  variants:
+    - :=
+    - =
+    - <>
+    - >=
+
+- question: Какие из ниже приведённых операций являются логическими операциями?
+  level: 1
+  variants:
+    - and
+    - lor
+    - nor
+    - xor
+
+- question: Какой тип данных можно выбрать для хранения логичского значения?
+  level: 1
+  variants:
+    - Integer
+    - String
+    - Char
+    - Boolean
+
+- question: Как выглядит условный оператор?
+  level: 2
+  variants:
+    - \verb|if <condition> then <operation>;|
+    - \verb|if <condition> then <operation> else <operation>;|
+    - \verb|if <condition> then <operation> else if <operation>;|
+    - \verb|if <condition>; then <operation>; else <operation>;|
+
+- question: Сколько операций можно выполнить после проверки условия ( без блока begin )?
+  level: 2
+  variants:
+    - 1
+    - 2
+    - сколько угодно
+    - 42
+
+- question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A xor true then Write('Привет!');|?
+  level: 2
+  variants:
+    - false
+    - true
+    - никогда не выведется
+    - 42
+
+- question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A and true then Write('Привет!');|?
+  level: 2
+  variants:
+    - false
+    - true
+    - никогда не выведется
+    - 42
+
+- question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A or true then Write('Привет!');|?
+  level: 2
+  variants:
+    - false
+    - true
+    - никогда не выведется
+    - 42
+
+- question: Что будет выведено на экран в результате выполнения приведённого кода?
+  level: 7
+  variants:
+    - Первый квартал
+    - Второй квартал
+    - Третий квартал
+    - Четвёртый квартал
+    - Очень плохой месяц
+  code: |
+    begin
+      case 5 of
+        1, 2, 3 : writeln ('Первый квартал');
+        4, 5, 6 : writeln ('Второй квартал');
+        7, 8, 9 : writeln ('Третий квартал');
+        10, 11, 12 : writeln ('Четвёртый квартал');
+        else writeln ('Очень плохой месяц');
+      end;
+    end.
+
+- question: Что будет выведено на экран в результате выполнения приведённого кода?
+  level: 7
+  variants:
+    - Первый квартал
+    - Второй квартал
+    - Третий квартал
+    - Четвёртый квартал
+    - Очень плохой месяц
+  code: |
+    begin
+      case 5 of
+        1, 2, 3 : writeln ('Первый квартал');
+        3, 4, 5 : writeln ('Второй квартал');
+        5, 6, 7 : writeln ('Третий квартал');
+        7, 8, 9 : writeln ('Четвёртый квартал');
+        else writeln ('Очень плохой месяц');
+      end;
+    end.
+
+- question: Что будет выведено на экран в результате выполнения приведённого кода?
+  level: 7
+  variants:
+    - Нечётное
+    - Чётное
+    - Не число
+    -
+  code: |
+    begin
+      case (42 mod 2) of
+        0: WriteLn('Нечётное');
+        1: WriteLn('Чётное');
+        else WriteLn('Не число')
+      end;
+    end.
