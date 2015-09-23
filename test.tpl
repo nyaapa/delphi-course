@@ -33,13 +33,16 @@
 	inputencoding=utf8x,
 	extendedchars=\true
 }
+\begin{huge} \textbf{ {{ .Title }} } \end{huge}
+
+
 {{range .Questions}}
 	\begin{framed}
 		{{if .Code}}
 			\begin{minipage}[t]{0.45\textwidth}
 			\flushleft
 		{{end}}
-		{{.Question}}
+		{{.No}}. {{.Question}}
 		\begin{enumerate}
 		{{range .Variants}}
 			\item {{.}}
