@@ -94,7 +94,8 @@ func main() {
 	}
 	if *answers {
 		tmpl, _ := template.ParseFiles("answers.tpl")
-		var withAnswers struct { Questions []TestAnswers }
+		var withAnswers struct { Questions []TestAnswers; Title string }
+		withAnswers.Title = *base
 		for _, raw := range qBase {
 			test := TestAnswers{ raw.No, "" }
 			for i, variant := range raw.Variants {
@@ -134,7 +135,7 @@ func main() {
 		tmpl, _ := template.ParseFiles("test.tpl")
 		var out bytes.Buffer
 		writer := bufio.NewWriter(&out)
-		tmpl.Execute(writer, struct { Questions []Test }{ selectedQuestions })
+		tmpl.Execute(writer, struct { Questions []Test; Title string }{ selectedQuestions, *base })
 		writer.Flush()
 	
 		reg, err := regexp.Compile(`\n[^\S\n]*\n`)

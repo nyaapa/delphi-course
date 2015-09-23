@@ -9,6 +9,9 @@ go get gopkg.in/yaml.v2
 Run generator:
 ```go build gen.go && ./gen --base=base1.yml  > out && pdflatex out && evince out.pdf```
 
+Generate answers page:
+```go build gen.go && ./gen --base=base1.yml --answers > out && pdflatex out && evince out.pdf```
+
 Common way with check-pages:
 ```
 go build gen.go

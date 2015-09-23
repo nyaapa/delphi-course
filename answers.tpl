@@ -33,6 +33,8 @@
 	inputencoding=utf8x,
 	extendedchars=\true
 }
+\begin{huge} \textbf{ {{ .Title }} } \end{huge}
+
 {{range .Questions}}
 	{{.No}}: {{.Answers}} \newline
 {{end}}

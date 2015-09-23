@@ -1,25 +1,25 @@
 - question: Из чего можно получить логические ( булевые ) значения?
   level: 0
   variants:
-    - из операций сравнения
-    - из логических операций
+    - из операций сравнения!!
+    - из логических операций!!
     - из арифметических операций
 
 - question: Какие из ниже приведённых операций являются операциями сравнения?
   level: 0
   variants:
     - ':='
-    - '='
-    - '<>'
-    - '>='
+    - '=!!'
+    - '<>!!'
+    - '>=!!'
 
 - question: Какие из ниже приведённых операций являются логическими операциями?
   level: 0
   variants:
-    - and
+    - and!!
     - lor
     - nor
-    - xor
+    - xor!!
 
 - question: Какой тип данных можно выбрать для хранения логического значения?
   level: 0
@@ -27,14 +27,14 @@
     - Integer
     - String
     - Char
-    - Boolean
+    - Boolean!!
 
 - question: Какие из приведённых значений можно использовать для задания константы типа Boolean?
   level: 1
   variants:
     - 1.5
     - 120
-    - true
+    - true!!
     - 'c'
     - 'abc'
 
@@ -43,7 +43,7 @@
   variants:
     - 1.5
     - 120
-    - false
+    - false!!
     - 'c'
     - 'abc'
 
@@ -51,7 +51,7 @@
   level: 1
   variants:
     - 1.5
-    - 42 > 11
+    - 42 > 11!!
     - 12 + 15
     - 'c'
     - 'abc'
@@ -60,7 +60,7 @@
   level: 1
   variants:
     - 1.5
-    - (42 > 11) or false
+    - (42 > 11) or false!!
     - Sqrt(12 + 15) mod 2
     - StrToInt('c')
     - 'abc'
@@ -68,15 +68,15 @@
 - question: Как может выглядеть условный оператор?
   level: 2
   variants:
-    - \verb|if <condition> then <operation>;|
-    - \verb|if <condition> then <operation> else <operation>;|
+    - \verb|if <condition> then <operation>;|!!
+    - \verb|if <condition> then <operation> else <operation>;|!!
     - \verb|if <condition> then <operation> else if <operation>;|
     - \verb|if <condition>; then <operation>; else <operation>;|
 
 - question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A xor true then Write('Привет!');|?
   level: 2
   variants:
-    - false
+    - false!!
     - true
     - никогда не выведется
     - 42
@@ -85,15 +85,15 @@
   level: 2
   variants:
     - false
-    - true
+    - true!!
     - никогда не выведется
     - 42
 
 - question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A or true then Write('Привет!');|?
   level: 2
   variants:
-    - false
-    - true
+    - false!!
+    - true!!
     - никогда не выведется
     - 42
 
@@ -101,25 +101,25 @@
   level: 3
   variants:
     - после \verb|Write('Привет')|
-    - после \verb|Write('Пока')|
+    - после \verb|Write('Пока')|!!
     - после \verb|true|
     - после \verb|else|
 
 - question: Где лишняя точки с запятой \verb|if true; then Write('Привет'); else; Write('Пока');|?
   level: 3
   variants:
-    - после \verb|Write('Привет')|
+    - после \verb|Write('Привет')|!!
     - после \verb|Write('Пока')|
-    - после \verb|true|
-    - после \verb|else|
+    - после \verb|true|!!
+    - после \verb|else|!!
 
-- question: Как исправить код \verb|if true then Write('Привет'); else; Write('Пока')|?
+- question: Как исправить код \verb|if true then Write('Привет'); else; Write('Пока')| в несколько шагов?
   level: 3
   variants:
-    - Убрать \verb|;| после \verb|Write('Привет')|
-    - Добавить \verb|;| после \verb|Write('Пока')|
+    - Убрать \verb|;| после \verb|Write('Привет')|!!
+    - Добавить \verb|;| после \verb|Write('Пока')|!!
     - Добавить \verb|;| после \verb|true|
-    - Убрать \verb|;| после \verb|else|
+    - Убрать \verb|;| после \verb|else|!!
 
 - question: Как сделать так, чтобы выводилось верное утверждение?
   code: |
@@ -134,7 +134,7 @@
     - Поместить два вывода после \verb|then| в блок \verb|begin-end|
     - Объединить два вывода после \verb|then| в один
     - Всё и так верно
-    - Ни одно из приведённых решений не поможет
+    - Ни одно из приведённых решений не поможет!!
 
 - question: Как сделать так, чтобы выводилось верное утверждение?
   code: |
@@ -146,7 +146,7 @@
     WriteLn(' секунд в минуте');
   level: 4
   variants:
-    - Поместить два вывода после \verb|then| в блок \verb|begin-end|
+    - Поместить два вывода после \verb|then| в блок \verb|begin-end|!!
     - Объединить два вывода после \verb|then| в один
     - Всё и так верно
     - Ни одно из приведённых решений не поможет
@@ -164,13 +164,13 @@
     - Поместить два вывода после \verb|then| в блок \verb|begin-end|
     - Объединить два вывода после \verb|then| в один
     - Всё и так верно
-    - Ни одно из приведённых решений не поможет
+    - Ни одно из приведённых решений не поможет!!
 
 - question: Что будет выведено на экран в результате выполнения приведённого кода?
   level: 6
   variants:
     - A
-    - AC
+    - AC!!
     -
     - BC
   code: |
@@ -187,7 +187,7 @@
 - question: Что будет выведено на экран в результате выполнения приведённого кода?
   level: 6
   variants:
-    - A
+    - A!!
     - AC
     -
     - BC
@@ -207,7 +207,7 @@
   variants:
     - A
     - AC
-    - Ошибка в коде
+    - Ошибка в коде!!
     - BC
   code: |
     begin
@@ -225,7 +225,7 @@
   variants:
     - A
     - AC
-    - Ошибка в коде
+    - Ошибка в коде!!
     - BC
   code: |
     begin
@@ -240,7 +240,7 @@
   level: 6
   variants:
     - A
-    - AC
+    - AC!!
     -
     - BC
   code: |
@@ -256,7 +256,7 @@
   level: 7
   variants:
     - Первый квартал
-    - Второй квартал
+    - Второй квартал!!
     - Третий квартал
     - Четвёртый квартал
     - Очень плохой месяц
@@ -278,7 +278,7 @@
     - Второй квартал
     - Третий квартал
     - Четвёртый квартал
-    - Очень плохой месяц
+    - Очень плохой месяц!!
   code: |
     begin
       case 11 of
@@ -293,7 +293,7 @@
 - question: Что будет выведено на экран в результате выполнения приведённого кода?
   level: 7
   variants:
-    - Нечётное
+    - Нечётное!!
     - Чётное
     - Не число
   code: |
