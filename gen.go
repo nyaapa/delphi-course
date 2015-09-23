@@ -36,7 +36,13 @@ func (slice Tests) Len() int {
 }
 
 func (slice Tests) Less(i, j int) bool {
-    return slice[i].Level < slice[j].Level;
+    if slice[i].Level < slice[j].Level {
+		return true
+	} else if slice[i].Level > slice[j].Level {
+		return false
+	} else {
+		return slice[i].No < slice[j].No
+	}
 }
 
 func (slice Tests) Swap(i, j int) {
