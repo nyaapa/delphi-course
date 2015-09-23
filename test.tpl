@@ -43,11 +43,13 @@
 			\flushleft
 		{{end}}
 		{{.No}}. {{.Question}}
+		{{if .Variants}}
 		\begin{enumerate}
 		{{range .Variants}}
 			\item {{.}}
 		{{end}}
 		\end{enumerate}
+		{{end}}
 		{{if .Code}}
 			\end{minipage}
 			\hfill
