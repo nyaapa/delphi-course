@@ -1,299 +1,302 @@
-- question: Какие из приведённых значений можно использовать для задания константы типа Integer?
-  level: 0
-  variants:
-    - 1.5
-    - 120!!
-    - 0.7e5
-    - "'c'"
-    - "'abc'"
+title: РК 1
+questions:
+  - question: Какие из приведённых значений можно использовать для задания константы типа \verb|Integer|?
+    level: 0
+    variants:
+      - 1.5
+      - 120!!
+      - 0.7e5
+      - "'c'"
+      - "'abc'"
 
-- question: Какие из приведённых значений можно использовать для задания константы типа Real?
-  level: 0
-  variants:
-    - 1.5!!
-    - 120!!
-    - 0.7e5!!
-    - "'c'"
-    - "'abc'"
-
-- question: Какие из приведённых значений можно использовать для задания константы типа Char?
-  level: 0
-  variants:
-    - 1.5
-    - 120
-    - 0.7e5
-    - "'c'!!"
-    - "'abc'"
-
-- question: При помощи какого ключевого слова объявляется блок переменных в программе на языке Delphi?
-  level: 1
-  variants:
-    - program
-    - const
-    - var!!
-    - begin
-
-- question: При помощи какого ключевого слова объявляется блок констант в программе на языке Delphi?
-  level: 1
-  variants:
-    - program
-    - const!!
-    - var
-    - begin
-
-- question: С какого ключевого слова начинается программа на языке Delphi?
-  level: 1
-  variants:
-    - program!!
-    - const
-    - var
-    - begin
-
-- question: Какая из указанных строк будет комментарием в программе на языке Delphi?
-  level: 1
-  variants:
-    - \verb|/* Comment text */|!!
-    - \verb|// Comment text|!!
-    - \verb|% Comment text|
-    - \verb|# Comment text|
-
-- question: Какой тип данных можно выбрать для хранения имени города? Имя состоит из нескольких букв.
-  level: 2
-  variants:
-    - Integer
-    - Real
-    - Char
-    - String!!
-
-- question: Какой тип данных нельзя выбрать для хранения порядкового номера месяца? В году 12 месяцев.
-  level: 2
-  variants:
-    - Integer
-    - Real
-    - Char!!
-    - Boolean!!
-
-- question: Какой из указанных типов данных подойдет для хранения значения площади треугольника? Требуется обеспечить точность в 3 знака после запятой.
-  level: 2
-  variants:
-    - Integer
-    - Real!!
-    - Char
-    - Boolean
-
-- question: В программе переменные Length и Width имеют тип данных Real и хранят, соответственно, длину и ширину прямоугольника. Какая из команд выведет четверть площади данного прямоугольника?
-  level: 3
-  variants:
-    - \verb|WriteLn( 1 / 4 * (Width * Length) );|!!
-    - \verb|WriteLn( (Width * Length) * 2 / 8 );|!!
-    - \verb|WriteLn( 0.25 * Length * Width );|!!
-    - Ни одна из указанных команд
-
-- question: В программе переменная Time имеет тип Real и хранит количество секунд с момента запуска ракеты. Какая команда выведет значение Time в часах?
-  level: 3
-  variants:
-    - \verb|WriteLn( Time / 60 );|
-    - \verb|WriteLn( Time / 60 * 60 );|
-    - \verb|WriteLn( Time / (60 * 60) );|!!
-    - \verb|WriteLn( Time / 36 * 100 );|!!
-
-- question: В программе переменная Angle имеет тип Integer и хранит величину угла между векторами в градусах. Какая команда выведет значение Angle в радианах? В программе также определена константа PI = $\pi$. 1 радиан равен $180 /\pi$.
-  level: 3
-  variants:
-    - \verb|WriteLn( Angle * PI / 180 );|!!
-    - \verb|WriteLn( Angle / PI * 180 );|
-    - \verb|WriteLn( Angle * PI / 360 );|
-    - \verb|WriteLn( Angle / (PI * 360) );|
-
-- question: В программе переменная Distance имеет тип Real и содержит расстояние между двумя городами в милях. Какая команда выведет значение Distance в километрах? 1 миля примерно равна 1.6093 километра.
-  level: 4
-  variants:
-    - \verb|WriteLn( 1.6093 * Sqr(Distance) );|
-    - \verb|WriteLn( 1.6093 / Distance );|
-    - \verb|WriteLn( Distance * 1.6093 );|!!
-    - \verb|WriteLn( Distance / 1.6093 );|
-
-- question: В программе переменная Debt имеет тип Real и содержит величину текущей задолженности в рублях. Какая команда выведет значение Debt в долларах, если курс доллара к рублю равен 100 рублей за 1 доллар?
-  level: 4
-  variants:
-    - \verb|WriteLn( Debt * 100 );|
-    - \verb|WriteLn( Debt / 100 );|!!
-    - \verb|ReadLn( Debt * 100 );|
-    - \verb|ReadLn( Debt / 100 );|
-
-- question: В программе переменная Height имеет тип Real и хранит высоту цилиндра в сантиметрах. Какая команда выведет значение Height в дюймах? 1 дюйм равен 2.54 сантиметра.
-  level: 4
-  variants:
-    - \verb|WriteLn( Height / 2.54 );|!!
-    - \verb|WriteLn( Height * 2.54 );|
-    - \verb|ReadLn( Height / 2.54 );|
-    - \verb|ReadLn( Height * 2.54 );|
-
-- question: В программе переменная Sum имеет тип Real и содержит величину баланса некоторого предприятия в евро. Какая команда выведет значение Sum в рублях, если курс евро к рублю равен 150 рублей за 1 евро?
-  level: 5
-  variants:
-    - \verb|ReadLn( Sum / 150 );|
-    - \verb|WriteLn( Sum / 150 );|
-    - \verb|ReadLn( Sum * 150 );|
-    - \verb|WriteLn( Sum * 150 );|!!
-
-- question: В программе переменная Size имеет тип Integer и хранит объём данных в килобайтах. Какая команда выведет значение Size в битах, если килобайт равен 1024 байта, а 1 байт равен 8 битам?
-  level: 5
-  variants:
-    - \verb|WriteLn( Size * 1024 / 8 );|
-    - \verb|WriteLn( Size * 1024 * 8 );|!!
-    - \verb|WriteLn( Size / (1024 * 8) );|
-    - \verb|WriteLn( Size / 1024 * 8 );|
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 6
-  code: |
-    var
-      A, B, C: Integer;
-    begin
-      A := 2;
-      B := 3;
-      A := A + B;
-      C := B;
-      B := A;
-      A := C;
-      B := B div 4;
-      WriteLn('A = ', A, ', B = ', B);
-    end.
-  variants:
-    - A = 3, B = 1!!
-    - A = 3, B = 2
-    - A = 6, B = 3
-    - A = 3, B = 2
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 6
-  variants:
-    - M = 1, N = 30
-    - M = 9, N = 10
-    - M = 3, N = 10
-    - M = 3, N = 30!!
-  code: |
-    var
-      M, N, K: Integer;
-    begin
-      M := 10;
-      N := M mod 7;
-      K := M;
-      M := N;
-      N := K;
-      N := 3 * N;
-      WriteLn('M = ', M, ', N = ', N);
-    end.
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 6
-  variants:
-    - A = 30, B = 7!!
-    - A = 30, B = 2
-    - A = -30, B = 7
-    - A = -30, B = 2
-  code: |
-    var
-      A, B: Integer;
-    begin
-      A := 40;
-      B := 70;
-      B := B - A;
-      A := B;
-      B := B div 4;
-      WriteLn('A = ', A, ', B = ', B);
-    end.
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 6
-  variants:
-    - X = 0, Z = 2
-    - X = 1, Z = 2
-    - X = 0, Z = 10!!
-    - X = 1, Z = 10
-  code: |
-    var
-      X, Y, Z: Integer;
-    begin
-      Z := 1;
-      X := 10;
-      Z := Z * (Z + 1);
-      Y := X;
-      X := Z;
-      Z := Y;
-      X := X mod 2;
-      WriteLn('X = ', X, ', Z = ', Z);
-    end.
-
-- question: Что будет выведено на экран в результате выполнения (в кодировке ASCII символы 'a', 'b', 'c', ..., 'z' идут подряд)?
-  level: 7
-  variants:
-    - Будет выведен числовой код символа 'b'
-    - Будет выведен числовой код символа 'f'
-    - b!!
-    - f
-  code: |
-    var
-      A: Integer;
-      S: Char;
-    begin
-      A := ord('d');
-      A := A - 2;
-      S := chr(A);
-      WriteLn(S);
-    end.
-
-- question: Что будет выведено на экран в результате выполнения (в кодировке ASCII символы 'a', 'b', 'c', ..., 'z' идут подряд)?
-  level: 7
-  variants:
-    - Будет выведен числовой код символа 'd'
-    - Будет выведен числовой код символа 'c'
-    - d!!
-    - c
-  code: |
-    var
-      A: Integer;
-      S: Char;
-    begin
-      A := ord('a');
-      A := A + 3;
-      S := chr(A);
-      WriteLn(S);
-    end.
-
-- question: Что будет выведено на экран в результате выполнения (в кодировке ASCII символы 'a', 'b', 'c', ..., 'z' идут подряд)?
-  level: 7
-  variants:
-    - Будет выведен числовой код символа 'y'!!
-    - Будет выведен числовой код символа 'x'
-    - y
-    - x
-  code: |
-    var
-      A: Integer;
-      S: Char;
-    begin
-      A := ord('z');
-      S := chr(A - 1);
-      A := ord(S);
-      WriteLn(A);
-    end.
-
-- question: Что будет выведено на экран в результате выполнения (в кодировке ASCII символы 'a', 'b', 'c', ..., 'z' идут подряд)?
-  level: 7
-  variants:
-    - Будет выведен числовой код символа 'b'
-    - Будет выведен числовой код символа 'c'!!
-    - b
-    - c
-  code: |
-    var
-      A: Integer;
-      S: Char;
-    begin
-      A := ord('a');
-      S := chr(A + 2);
-      A := ord(S);
-      WriteLn(A);
-    end.
+  - question: Какие из приведённых значений можно использовать для задания константы типа \verb|Real|?
+    level: 0
+    variants:
+      - 1.5!!
+      - 120!!
+      - 0.7e5!!
+      - "'c'"
+      - "'abc'"
+  
+  - question: Какие из приведённых значений можно использовать для задания константы типа \verb|Char|?
+    level: 0
+    variants:
+      - 1.5
+      - 120
+      - 0.7e5
+      - "'c'!!"
+      - "'abc'"
+  
+  - question: При помощи какого ключевого слова объявляется блок переменных в программе на языке Delphi?
+    level: 1
+    variants:
+      - program
+      - const
+      - var!!
+      - begin
+  
+  - question: При помощи какого ключевого слова объявляется блок констант в программе на языке Delphi?
+    level: 1
+    variants:
+      - program
+      - const!!
+      - var
+      - begin
+  
+  - question: С какого ключевого слова начинается программа на языке Delphi?
+    level: 1
+    variants:
+      - program!!
+      - const
+      - var
+      - begin
+  
+  - question: Какая из указанных строк будет комментарием в программе на языке Delphi?
+    level: 1
+    variants:
+      - \verb|/* Comment text */|!!
+      - \verb|// Comment text|!!
+      - \verb|{ Comment text }|!!
+      - \verb|% Comment text|
+      - \verb|# Comment text|
+  
+  - question: Какой тип данных можно выбрать для хранения имени города? Имя состоит из нескольких букв.
+    level: 2
+    variants:
+      - Integer
+      - Real
+      - Char
+      - String!!
+  
+  - question: Какой тип данных нельзя выбрать для хранения порядкового номера месяца? В году 12 месяцев.
+    level: 2
+    variants:
+      - Integer
+      - Real
+      - Char!!
+      - Boolean!!
+  
+  - question: Какой из указанных типов данных подойдет для хранения значения площади треугольника? Требуется обеспечить точность в 3 знака после запятой.
+    level: 2
+    variants:
+      - Integer
+      - Real!!
+      - Char
+      - Boolean
+  
+  - question: В программе переменные \verb|Length| и \verb|Width| имеют тип данных \verb|Real| и хранят, соответственно, длину и ширину прямоугольника. Какая из команд выведет четверть площади данного прямоугольника?
+    level: 3
+    variants:
+      - \verb|WriteLn( 1 / 4 * (Width * Length) );|!!
+      - \verb|WriteLn( (Width * Length) * 2 / 8 );|!!
+      - \verb|WriteLn( 0.25 * Length * Width );|!!
+      - Ни одна из указанных команд
+  
+  - question: В программе переменная \verb|Time| имеет тип \verb|Real| и хранит количество секунд с момента запуска ракеты. Какая команда выведет значение \verb|Time| в часах?
+    level: 3
+    variants:
+      - \verb|WriteLn( Time / 60 );|
+      - \verb|WriteLn( Time / 60 * 60 );|
+      - \verb|WriteLn( Time / (60 * 60) );|!!
+      - \verb|WriteLn( Time / 36 * 100 );|!!
+  
+  - question: В программе переменная \verb|Angle| имеет тип \verb|Integer| и хранит величину угла между векторами в градусах. Какая команда выведет значение \verb|Angle| в радианах? В программе также определена константа \verb|PI = |$\pi$. 1 радиан равен $180 /\pi$.
+    level: 3
+    variants:
+      - \verb|WriteLn( Angle * PI / 180 );|!!
+      - \verb|WriteLn( Angle / PI * 180 );|
+      - \verb|WriteLn( Angle * PI / 360 );|
+      - \verb|WriteLn( Angle / (PI * 360) );|
+  
+  - question: В программе переменная \verb|Distance| имеет тип \verb|Real| и содержит расстояние между двумя городами в милях. Какая команда выведет значение \verb|Distance| в километрах? 1 миля примерно равна 1.6093 километра.
+    level: 4
+    variants:
+      - \verb|WriteLn( 1.6093 * Sqr(Distance) );|
+      - \verb|WriteLn( 1.6093 / Distance );|
+      - \verb|WriteLn( Distance * 1.6093 );|!!
+      - \verb|WriteLn( Distance / 1.6093 );|
+  
+  - question: В программе переменная \verb|Debt| имеет тип \verb|Real| и содержит величину текущей задолженности в рублях. Какая команда выведет значение \verb|Debt| в долларах, если курс доллара к рублю равен 100 рублей за 1 доллар?
+    level: 4
+    variants:
+      - \verb|WriteLn( Debt * 100 );|
+      - \verb|WriteLn( Debt / 100 );|!!
+      - \verb|ReadLn( Debt * 100 );|
+      - \verb|ReadLn( Debt / 100 );|
+  
+  - question: В программе переменная \verb|Height| имеет тип \verb|Real| и хранит высоту цилиндра в сантиметрах. Какая команда выведет значение Height в дюймах? 1 дюйм равен 2.54 сантиметра.
+    level: 4
+    variants:
+      - \verb|WriteLn( Height / 2.54 );|!!
+      - \verb|WriteLn( Height * 2.54 );|
+      - \verb|ReadLn( Height / 2.54 );|
+      - \verb|ReadLn( Height * 2.54 );|
+  
+  - question: В программе переменная \verb|Sum| имеет тип \verb|Real| и содержит величину баланса некоторого предприятия в евро. Какая команда выведет значение Sum в рублях, если курс евро к рублю равен 150 рублей за 1 евро?
+    level: 5
+    variants:
+      - \verb|ReadLn( Sum / 150 );|
+      - \verb|WriteLn( Sum / 150 );|
+      - \verb|ReadLn( Sum * 150 );|
+      - \verb|WriteLn( Sum * 150 );|!!
+  
+  - question: В программе переменная \verb|Size| имеет тип \verb|Integer| и хранит объём данных в килобайтах. Какая команда выведет значение \verb|Size| в битах, если килобайт равен 1024 байта, а 1 байт равен 8 битам?
+    level: 5
+    variants:
+      - \verb|WriteLn( Size * 1024 / 8 );|
+      - \verb|WriteLn( Size * 1024 * 8 );|!!
+      - \verb|WriteLn( Size / (1024 * 8) );|
+      - \verb|WriteLn( Size / 1024 * 8 );|
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 6
+    code: |
+      var
+        A, B, C: Integer;
+      begin
+        A := 2;
+        B := 3;
+        A := A + B;
+        C := B;
+        B := A;
+        A := C;
+        B := B div 4;
+        WriteLn('A = ', A, ', B = ', B);
+      end.
+    variants:
+      - A = 3, B = 1!!
+      - A = 3, B = 2
+      - A = 6, B = 3
+      - A = 3, B = 2
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 6
+    variants:
+      - M = 1, N = 30
+      - M = 9, N = 10
+      - M = 3, N = 10
+      - M = 3, N = 30!!
+    code: |
+      var
+        M, N, K: Integer;
+      begin
+        M := 10;
+        N := M mod 7;
+        K := M;
+        M := N;
+        N := K;
+        N := 3 * N;
+        WriteLn('M = ', M, ', N = ', N);
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 6
+    variants:
+      - A = 30, B = 7!!
+      - A = 30, B = 2
+      - A = -30, B = 7
+      - A = -30, B = 2
+    code: |
+      var
+        A, B: Integer;
+      begin
+        A := 40;
+        B := 70;
+        B := B - A;
+        A := B;
+        B := B div 4;
+        WriteLn('A = ', A, ', B = ', B);
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 6
+    variants:
+      - X = 0, Z = 2
+      - X = 1, Z = 2
+      - X = 0, Z = 10!!
+      - X = 1, Z = 10
+    code: |
+      var
+        X, Y, Z: Integer;
+      begin
+        Z := 1;
+        X := 10;
+        Z := Z * (Z + 1);
+        Y := X;
+        X := Z;
+        Z := Y;
+        X := X mod 2;
+        WriteLn('X = ', X, ', Z = ', Z);
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения (в кодировке ASCII символы 'a', 'b', 'c', ..., 'z' идут подряд)?
+    level: 7
+    variants:
+      - Будет выведен числовой код символа 'b'
+      - Будет выведен числовой код символа 'f'
+      - b!!
+      - f
+    code: |
+      var
+        A: Integer;
+        S: Char;
+      begin
+        A := ord('d');
+        A := A - 2;
+        S := chr(A);
+        WriteLn(S);
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения (в кодировке ASCII символы 'a', 'b', 'c', ..., 'z' идут подряд)?
+    level: 7
+    variants:
+      - Будет выведен числовой код символа 'd'
+      - Будет выведен числовой код символа 'c'
+      - d!!
+      - c
+    code: |
+      var
+        A: Integer;
+        S: Char;
+      begin
+        A := ord('a');
+        A := A + 3;
+        S := chr(A);
+        WriteLn(S);
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения (в кодировке ASCII символы 'a', 'b', 'c', ..., 'z' идут подряд)?
+    level: 7
+    variants:
+      - Будет выведен числовой код символа 'y'!!
+      - Будет выведен числовой код символа 'x'
+      - y
+      - x
+    code: |
+      var
+        A: Integer;
+        S: Char;
+      begin
+        A := ord('z');
+        S := chr(A - 1);
+        A := ord(S);
+        WriteLn(A);
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения (в кодировке ASCII символы 'a', 'b', 'c', ..., 'z' идут подряд)?
+    level: 7
+    variants:
+      - Будет выведен числовой код символа 'b'
+      - Будет выведен числовой код символа 'c'!!
+      - b
+      - c
+    code: |
+      var
+        A: Integer;
+        S: Char;
+      begin
+        A := ord('a');
+        S := chr(A + 2);
+        A := ord(S);
+        WriteLn(A);
+      end.

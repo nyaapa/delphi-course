@@ -1,306 +1,308 @@
-- question: Из чего можно получить логические ( булевые ) значения?
-  level: 0
-  variants:
-    - из операций сравнения!!
-    - из логических операций!!
-    - из арифметических операций
-
-- question: Какие из ниже приведённых операций являются операциями сравнения?
-  level: 0
-  variants:
-    - ':='
-    - '=!!'
-    - '<>!!'
-    - '>=!!'
-
-- question: Какие из ниже приведённых операций являются логическими операциями?
-  level: 0
-  variants:
-    - and!!
-    - lor
-    - nor
-    - xor!!
-
-- question: Какой тип данных можно выбрать для хранения логического значения?
-  level: 0
-  variants:
-    - Integer
-    - String
-    - Char
-    - Boolean!!
-
-- question: Какие из приведённых значений можно использовать для задания константы типа Boolean?
-  level: 1
-  variants:
-    - 1.5
-    - 120
-    - true!!
-    - 'c'
-    - 'abc'
-
-- question: Какие из приведённых значений можно использовать для задания константы типа Boolean?
-  level: 1
-  variants:
-    - 1.5
-    - 120
-    - false!!
-    - 'c'
-    - 'abc'
-
-- question: Что из приведённого можно использовать для задания константы типа Boolean?
-  level: 1
-  variants:
-    - 1.5
-    - 42 > 11!!
-    - 12 + 15
-    - 'c'
-    - 'abc'
-
-- question: Что из приведённого можно использовать для задания константы типа Boolean?
-  level: 1
-  variants:
-    - 1.5
-    - (42 > 11) or false!!
-    - Sqrt(12 + 15) mod 2
-    - StrToInt('c')
-    - 'abc'
-
-- question: Как может выглядеть условный оператор?
-  level: 2
-  variants:
-    - \verb|if <condition> then <operation>;|!!
-    - \verb|if <condition> then <operation> else <operation>;|!!
-    - \verb|if <condition> then <operation> else if <operation>;|
-    - \verb|if <condition>; then <operation>; else <operation>;|
-
-- question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A xor true then Write('Привет!');|?
-  level: 2
-  variants:
-    - false!!
-    - true
-    - никогда не выведется
-    - 42
-
-- question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A and true then Write('Привет!');|?
-  level: 2
-  variants:
-    - false
-    - true!!
-    - никогда не выведется
-    - 42
-
-- question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A or true then Write('Привет!');|?
-  level: 2
-  variants:
-    - false!!
-    - true!!
-    - никогда не выведется
-    - 42
-
-- question: Где нехватает точки с запятой \verb|if true then Write('Привет') else Write('Пока')|?
-  level: 3
-  variants:
-    - после \verb|Write('Привет')|
-    - после \verb|Write('Пока')|!!
-    - после \verb|true|
-    - после \verb|else|
-
-- question: Где лишняя точки с запятой \verb|if true; then Write('Привет'); else; Write('Пока');|?
-  level: 3
-  variants:
-    - после \verb|Write('Привет')|!!
-    - после \verb|Write('Пока')|
-    - после \verb|true|!!
-    - после \verb|else|!!
-
-- question: Как исправить код \verb|if true then Write('Привет'); else; Write('Пока')| в несколько шагов?
-  level: 3
-  variants:
-    - Убрать \verb|;| после \verb|Write('Привет')|!!
-    - Добавить \verb|;| после \verb|Write('Пока')|!!
-    - Добавить \verb|;| после \verb|true|
-    - Убрать \verb|;| после \verb|else|!!
-
-- question: Как сделать так, чтобы выводилось верное утверждение?
-  code: |
-    if false then
-      Write('6');
-      Write('0')
-    else
-      Write('24')';
-    WriteLn(' секунд в минуте');
-  level: 4
-  variants:
-    - Поместить два вывода после \verb|then| в блок \verb|begin-end|
-    - Объединить два вывода после \verb|then| в один
-    - Всё и так верно
-    - Ни одно из приведённых решений не поможет!!
-
-- question: Как сделать так, чтобы выводилось верное утверждение?
-  code: |
-    if true then
-      Write('6');
-      Write('0')
-    else
-      Write('24')';
-    WriteLn(' секунд в минуте');
-  level: 4
-  variants:
-    - Поместить два вывода после \verb|then| в блок \verb|begin-end|!!
-    - Объединить два вывода после \verb|then| в один
-    - Всё и так верно
-    - Ни одно из приведённых решений не поможет
-
-- question: Как сделать так, чтобы выводилось верное утверждение?
-  code: |
-    if true xor true then
-      Write('6');
-      Write('0')
-    else
-      Write('24')';
-    WriteLn(' секунд в минуте');
-  level: 4
-  variants:
-    - Поместить два вывода после \verb|then| в блок \verb|begin-end|
-    - Объединить два вывода после \verb|then| в один
-    - Всё и так верно
-    - Ни одно из приведённых решений не поможет!!
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 6
-  variants:
-    - A
-    - AC!!
-    -
-    - BC
-  code: |
-    begin
-      if 42 > 5 then
+title: РК 1
+questions:
+  - question: Из чего можно получить логические ( булевые ) значения?
+    level: 0
+    variants:
+      - из операций сравнения!!
+      - из логических операций!!
+      - из арифметических операций
+  
+  - question: Какие из ниже приведённых операций являются операциями сравнения?
+    level: 0
+    variants:
+      - ':='
+      - '=!!'
+      - '<>!!'
+      - '>=!!'
+  
+  - question: Какие из ниже приведённых операций являются логическими операциями?
+    level: 0
+    variants:
+      - and!!
+      - lor
+      - nor
+      - xor!!
+  
+  - question: Какой тип данных можно выбрать для хранения логического значения?
+    level: 0
+    variants:
+      - Integer
+      - String
+      - Char
+      - Boolean!!
+  
+  - question: Какие из приведённых значений можно использовать для задания константы типа Boolean?
+    level: 1
+    variants:
+      - 1.5
+      - 120
+      - true!!
+      - 'c'
+      - 'abc'
+  
+  - question: Какие из приведённых значений можно использовать для задания константы типа Boolean?
+    level: 1
+    variants:
+      - 1.5
+      - 120
+      - false!!
+      - 'c'
+      - 'abc'
+  
+  - question: Что из приведённого можно использовать для задания константы типа Boolean?
+    level: 1
+    variants:
+      - 1.5
+      - 42 > 11!!
+      - 12 + 15
+      - 'c'
+      - 'abc'
+  
+  - question: Что из приведённого можно использовать для задания константы типа Boolean?
+    level: 1
+    variants:
+      - 1.5
+      - (42 > 11) or false!!
+      - Sqrt(12 + 15) mod 2
+      - StrToInt('c')
+      - 'abc'
+  
+  - question: Как может выглядеть условный оператор?
+    level: 2
+    variants:
+      - \verb|if <condition> then <operation>;|!!
+      - \verb|if <condition> then <operation> else <operation>;|!!
+      - \verb|if <condition> then <operation> else if <operation>;|
+      - \verb|if <condition>; then <operation>; else <operation>;|
+  
+  - question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A xor true then Write('Привет!');|?
+    level: 2
+    variants:
+      - false!!
+      - true
+      - никогда не выведется
+      - 42
+  
+  - question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A and true then Write('Привет!');|?
+    level: 2
+    variants:
+      - false
+      - true!!
+      - никогда не выведется
+      - 42
+  
+  - question: Чему должно равняться \verb|A| чтобы вывелось приветсвие \verb|if A or true then Write('Привет!');|?
+    level: 2
+    variants:
+      - false!!
+      - true!!
+      - никогда не выведется
+      - 42
+  
+  - question: Где нехватает точки с запятой \verb|if true then Write('Привет') else Write('Пока')|?
+    level: 3
+    variants:
+      - после \verb|Write('Привет')|
+      - после \verb|Write('Пока')|!!
+      - после \verb|true|
+      - после \verb|else|
+  
+  - question: Где лишняя точки с запятой \verb|if true; then Write('Привет'); else; Write('Пока');|?
+    level: 3
+    variants:
+      - после \verb|Write('Привет')|!!
+      - после \verb|Write('Пока')|
+      - после \verb|true|!!
+      - после \verb|else|!!
+  
+  - question: Как исправить код \verb|if true then Write('Привет'); else; Write('Пока')| в несколько шагов?
+    level: 3
+    variants:
+      - Убрать \verb|;| после \verb|Write('Привет')|!!
+      - Добавить \verb|;| после \verb|Write('Пока')|!!
+      - Добавить \verb|;| после \verb|true|
+      - Убрать \verb|;| после \verb|else|!!
+  
+  - question: Как сделать так, чтобы выводилось верное утверждение?
+    code: |
+      if false then
+        Write('6');
+        Write('0')
+      else
+        Write('24')';
+      WriteLn(' секунд в минуте');
+    level: 4
+    variants:
+      - Поместить два вывода после \verb|then| в блок \verb|begin-end|
+      - Объединить два вывода после \verb|then| в один
+      - Всё и так верно
+      - Ни одно из приведённых решений не поможет!!
+  
+  - question: Как сделать так, чтобы выводилось верное утверждение?
+    code: |
+      if true then
+        Write('6');
+        Write('0')
+      else
+        Write('24')';
+      WriteLn(' секунд в минуте');
+    level: 4
+    variants:
+      - Поместить два вывода после \verb|then| в блок \verb|begin-end|!!
+      - Объединить два вывода после \verb|then| в один
+      - Всё и так верно
+      - Ни одно из приведённых решений не поможет
+  
+  - question: Как сделать так, чтобы выводилось верное утверждение?
+    code: |
+      if true xor true then
+        Write('6');
+        Write('0')
+      else
+        Write('24')';
+      WriteLn(' секунд в минуте');
+    level: 4
+    variants:
+      - Поместить два вывода после \verb|then| в блок \verb|begin-end|
+      - Объединить два вывода после \verb|then| в один
+      - Всё и так верно
+      - Ни одно из приведённых решений не поможет!!
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 6
+    variants:
+      - A
+      - AC!!
+      -
+      - BC
+    code: |
       begin
-        WriteLn('A');
-      end
-      else
-        WriteLn('B');
-        WriteLn('C');
-    end.
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 6
-  variants:
-    - A!!
-    - AC
-    -
-    - BC
-  code: |
-    begin
-      if 42 > 5 then
-        WriteLn('A')
-      else
+        if 42 > 5 then
+        begin
+          WriteLn('A');
+        end
+        else
+          WriteLn('B');
+          WriteLn('C');
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 6
+    variants:
+      - A!!
+      - AC
+      -
+      - BC
+    code: |
       begin
-        WriteLn('B');
-        WriteLn('C');
-      end;
-    end.
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 6
-  variants:
-    - A
-    - AC
-    - Ошибка в коде!!
-    - BC
-  code: |
-    begin
-      if 42 > 5 then
+        if 42 > 5 then
+          WriteLn('A')
+        else
+        begin
+          WriteLn('B');
+          WriteLn('C');
+        end;
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 6
+    variants:
+      - A
+      - AC
+      - Ошибка в коде!!
+      - BC
+    code: |
       begin
-        WriteLn('A')
-      else
-        WriteLn('B');
-        WriteLn('C');
-      end;
-    end.
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 6
-  variants:
-    - A
-    - AC
-    - Ошибка в коде!!
-    - BC
-  code: |
-    begin
-      if 42 > 5 then
-        WriteLn('A');
-      else
-        WriteLn('B');
-        WriteLn('C');
-    end.
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 6
-  variants:
-    - A
-    - AC!!
-    -
-    - BC
-  code: |
-    begin
-      if 42 > 5 then
-        WriteLn('A')
-      else
-        WriteLn('B');
-        WriteLn('C');
-    end.
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 7
-  variants:
-    - Первый квартал
-    - Второй квартал!!
-    - Третий квартал
-    - Четвёртый квартал
-    - Очень плохой месяц
-  code: |
-    begin
-      case 5 of
-        1..3 : writeln ('Первый квартал');
-        4, 5..6 : writeln ('Второй квартал');
-        7, 8, 9 : writeln ('Третий квартал');
-        10..11, 12 : writeln ('Четвёртый квартал');
-        else writeln ('Очень плохой месяц');
-      end;
-    end.
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 7
-  variants:
-    - Первый квартал
-    - Второй квартал
-    - Третий квартал
-    - Четвёртый квартал
-    - Очень плохой месяц!!
-  code: |
-    begin
-      case 11 of
-        1..3    : writeln ('Первый квартал');
-        4..6    : writeln ('Второй квартал');
-        7, 8, 9 : writeln ('Третий квартал');
-        10, 12  : writeln ('Четвёртый квартал');
-        else writeln ('Очень плохой месяц');
-      end;
-    end.
-
-- question: Что будет выведено на экран в результате выполнения приведённого кода?
-  level: 7
-  variants:
-    - Нечётное!!
-    - Чётное
-    - Не число
-  code: |
-    begin
-      case (42 mod 2) of
-        0: WriteLn('Нечётное');
-        1: WriteLn('Чётное');
-        else WriteLn('Не число')
-      end;
-    end.
+        if 42 > 5 then
+        begin
+          WriteLn('A')
+        else
+          WriteLn('B');
+          WriteLn('C');
+        end;
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 6
+    variants:
+      - A
+      - AC
+      - Ошибка в коде!!
+      - BC
+    code: |
+      begin
+        if 42 > 5 then
+          WriteLn('A');
+        else
+          WriteLn('B');
+          WriteLn('C');
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 6
+    variants:
+      - A
+      - AC!!
+      -
+      - BC
+    code: |
+      begin
+        if 42 > 5 then
+          WriteLn('A')
+        else
+          WriteLn('B');
+          WriteLn('C');
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 7
+    variants:
+      - Первый квартал
+      - Второй квартал!!
+      - Третий квартал
+      - Четвёртый квартал
+      - Очень плохой месяц
+    code: |
+      begin
+        case 5 of
+          1..3 : writeln ('Первый квартал');
+          4, 5..6 : writeln ('Второй квартал');
+          7, 8, 9 : writeln ('Третий квартал');
+          10..11, 12 : writeln ('Четвёртый квартал');
+          else writeln ('Очень плохой месяц');
+        end;
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 7
+    variants:
+      - Первый квартал
+      - Второй квартал
+      - Третий квартал
+      - Четвёртый квартал
+      - Очень плохой месяц!!
+    code: |
+      begin
+        case 11 of
+          1..3    : writeln ('Первый квартал');
+          4..6    : writeln ('Второй квартал');
+          7, 8, 9 : writeln ('Третий квартал');
+          10, 12  : writeln ('Четвёртый квартал');
+          else writeln ('Очень плохой месяц');
+        end;
+      end.
+  
+  - question: Что будет выведено на экран в результате выполнения приведённого кода?
+    level: 7
+    variants:
+      - Нечётное!!
+      - Чётное
+      - Не число
+    code: |
+      begin
+        case (42 mod 2) of
+          0: WriteLn('Нечётное');
+          1: WriteLn('Чётное');
+          else WriteLn('Не число')
+        end;
+      end.
