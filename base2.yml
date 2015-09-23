@@ -8,10 +8,10 @@
 - question: Какие из ниже приведённых операций являются операциями сравнения?
   level: 0
   variants:
-    - :=
-    - =
-    - <>
-    - >=
+    - ':='
+    - '='
+    - '<>'
+    - '>='
 
 - question: Какие из ниже приведённых операций являются логическими операциями?
   level: 0
@@ -96,6 +96,161 @@
     - true
     - никогда не выведется
     - 42
+
+- question: Где нехватает точки с запятой \verb|if true then Write('Привет') else Write('Пока')|?
+  level: 3
+  variants:
+    - после \verb|Write('Привет')|
+    - после \verb|Write('Пока')|
+    - после \verb|true|
+    - после \verb|else|
+
+- question: Где лишняя точки с запятой \verb|if true; then Write('Привет'); else; Write('Пока');|?
+  level: 3
+  variants:
+    - после \verb|Write('Привет')|
+    - после \verb|Write('Пока')|
+    - после \verb|true|
+    - после \verb|else|
+
+- question: Как исправить код \verb|if true then Write('Привет'); else; Write('Пока')|?
+  level: 3
+  variants:
+    - Убрать \verb|;| после \verb|Write('Привет')|
+    - Добавить \verb|;| после \verb|Write('Пока')|
+    - Добавить \verb|;| после \verb|true|
+    - Убрать \verb|;| после \verb|else|
+
+- question: Как сделать так, чтобы выводилось верное утверждение?
+  code: |
+    if false then
+      Write('6');
+      Write('0')
+    else
+      Write('24')';
+    WriteLn(' секунд в минуте');
+  level: 4
+  variants:
+    - Поместить два вывода после \verb|then| в блок \verb|begin-end|
+    - Объединить два вывода после \verb|then| в один
+    - Всё и так верно
+    - Ни одно из приведённых решений не поможет
+
+- question: Как сделать так, чтобы выводилось верное утверждение?
+  code: |
+    if true then
+      Write('6');
+      Write('0')
+    else
+      Write('24')';
+    WriteLn(' секунд в минуте');
+  level: 4
+  variants:
+    - Поместить два вывода после \verb|then| в блок \verb|begin-end|
+    - Объединить два вывода после \verb|then| в один
+    - Всё и так верно
+    - Ни одно из приведённых решений не поможет
+
+- question: Как сделать так, чтобы выводилось верное утверждение?
+  code: |
+    if true xor true then
+      Write('6');
+      Write('0')
+    else
+      Write('24')';
+    WriteLn(' секунд в минуте');
+  level: 4
+  variants:
+    - Поместить два вывода после \verb|then| в блок \verb|begin-end|
+    - Объединить два вывода после \verb|then| в один
+    - Всё и так верно
+    - Ни одно из приведённых решений не поможет
+
+- question: Что будет выведено на экран в результате выполнения приведённого кода?
+  level: 6
+  variants:
+    - A
+    - AC
+    -
+    - BC
+  code: |
+    begin
+      if 42 > 5 then
+      begin
+        WriteLn('A');
+      end
+      else
+        WriteLn('B');
+        WriteLn('C');
+    end.
+
+- question: Что будет выведено на экран в результате выполнения приведённого кода?
+  level: 6
+  variants:
+    - A
+    - AC
+    -
+    - BC
+  code: |
+    begin
+      if 42 > 5 then
+        WriteLn('A')
+      else
+      begin
+        WriteLn('B');
+        WriteLn('C');
+      end;
+    end.
+
+- question: Что будет выведено на экран в результате выполнения приведённого кода?
+  level: 6
+  variants:
+    - A
+    - AC
+    - Ошибка в коде
+    - BC
+  code: |
+    begin
+      if 42 > 5 then
+      begin
+        WriteLn('A')
+      else
+        WriteLn('B');
+        WriteLn('C');
+      end;
+    end.
+
+- question: Что будет выведено на экран в результате выполнения приведённого кода?
+  level: 6
+  variants:
+    - A
+    - AC
+    - Ошибка в коде
+    - BC
+  code: |
+    begin
+      if 42 > 5 then
+        WriteLn('A');
+      else
+        WriteLn('B');
+        WriteLn('C');
+    end.
+
+- question: Что будет выведено на экран в результате выполнения приведённого кода?
+  level: 6
+  variants:
+    - A
+    - AC
+    -
+    - BC
+  code: |
+    begin
+      if 42 > 5 then
+        WriteLn('A')
+      else
+        WriteLn('B');
+        WriteLn('C');
+    end.
 
 - question: Что будет выведено на экран в результате выполнения приведённого кода?
   level: 7

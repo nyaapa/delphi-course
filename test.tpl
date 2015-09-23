@@ -1,7 +1,8 @@
 \documentclass[a4paper]{report}
 
 \usepackage[left=1.25cm,right=1.25cm,top=1cm,bottom=2cm,bindingoffset=0cm]{geometry}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
 \usepackage[russian]{babel}
 
 \usepackage{framed}
@@ -28,7 +29,9 @@
 	captionpos=t,
 	breaklines=true,
 	breakatwhitespace=false,
-	escapeinside={\%*}{*)}
+	escapeinside={\%*}{*)},
+	inputencoding=utf8x,
+	extendedchars=\true
 }
 {{range .Questions}}
 	\begin{framed}
@@ -36,7 +39,7 @@
 			\begin{minipage}[t]{0.45\textwidth}
 			\flushleft
 		{{end}}
-		{{.Question}} \newline
+		{{.Question}}
 		\begin{enumerate}
 		{{range .Variants}}
 			\item {{.}}
@@ -47,7 +50,7 @@
 			\hfill
 			\begin{minipage}[t]{0.50\textwidth}
 			\hspace*{0pt}
-			\begin{lstlisting}
+			\begin{lstlisting}[mathescape=true]
 			{{ .Code }}
 			\end{lstlisting}
 			\end{minipage}
