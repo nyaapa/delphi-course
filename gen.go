@@ -78,11 +78,13 @@ func main() {
         panic(fmt.Sprintf("Error in readfile: %v", err))
     }
 
-	var qBase []Test
+	var rawBase struct{ Title string; Questions []Test }
 
-	if err := yaml.Unmarshal([]byte(content), &qBase); err != nil {
+	if err := yaml.Unmarshal([]byte(content), &rawBase); err != nil {
 		panic(fmt.Sprintf("Error in yaml unmarshall: %s", err))
 	}
+
+	qBase := rawBase.Questions
 
 	for i, _ := range qBase {
 		qBase[i].No = i + 1
@@ -95,7 +97,7 @@ func main() {
 	if *answers {
 		tmpl, _ := template.ParseFiles("answers.tpl")
 		var withAnswers struct { Questions []TestAnswers; Title string }
-		withAnswers.Title = *base
+		withAnswers.Title = rawBase.Title
 		for _, raw := range qBase {
 			test := TestAnswers{ raw.No, "" }
 			for i, variant := range raw.Variants {
@@ -135,7 +137,7 @@ func main() {
 		tmpl, _ := template.ParseFiles("test.tpl")
 		var out bytes.Buffer
 		writer := bufio.NewWriter(&out)
-		tmpl.Execute(writer, struct { Questions []Test; Title string }{ selectedQuestions, *base })
+		tmpl.Execute(writer, struct { Questions []Test; Title string }{ selectedQuestions, rawBase.Title })
 		writer.Flush()
 	
 		reg, err := regexp.Compile(`\n[^\S\n]*\n`)
