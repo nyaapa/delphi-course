@@ -107,7 +107,7 @@ questions:
       - после \verb|true|
       - после \verb|else|
   
-  - question: Где лишняя точки с запятой \verb|if true; then Write('Привет'); else; Write('Пока');|?
+  - question: Где лишняя точка с запятой \verb|if true; then Write('Привет'); else; Write('Пока');|?
     level: 3
     variants:
       - после \verb|Write('Привет')|!!
@@ -179,11 +179,11 @@ questions:
       begin
         if 42 > 5 then
         begin
-          WriteLn('A');
+          Write('A');
         end
         else
-          WriteLn('B');
-          WriteLn('C');
+          Write('B');
+          Write('C');
       end.
   
   - question: Что будет выведено на экран в результате выполнения приведённого кода?
@@ -196,11 +196,11 @@ questions:
     code: |
       begin
         if 42 > 5 then
-          WriteLn('A')
+          Write('A')
         else
         begin
-          WriteLn('B');
-          WriteLn('C');
+          Write('B');
+          Write('C');
         end;
       end.
   
@@ -215,10 +215,10 @@ questions:
       begin
         if 42 > 5 then
         begin
-          WriteLn('A')
+          Write('A')
         else
-          WriteLn('B');
-          WriteLn('C');
+          Write('B');
+          Write('C');
         end;
       end.
   
@@ -232,10 +232,10 @@ questions:
     code: |
       begin
         if 42 > 5 then
-          WriteLn('A');
+          Write('A');
         else
-          WriteLn('B');
-          WriteLn('C');
+          Write('B');
+          Write('C');
       end.
   
   - question: Что будет выведено на экран в результате выполнения приведённого кода?
@@ -248,10 +248,10 @@ questions:
     code: |
       begin
         if 42 > 5 then
-          WriteLn('A')
+          Write('A')
         else
-          WriteLn('B');
-          WriteLn('C');
+          Write('B');
+          Write('C');
       end.
   
   - question: Что будет выведено на экран в результате выполнения приведённого кода?

@@ -48,13 +48,16 @@ questions:
       - один раз перед первой итерацией
       - оно должно быть верно для всех операций внутри цикла всегда
   
-  - question: В цикле for-do в интервал включает в себя.
+  - question: Что будет выведено в результате выполнения следующего кода?
+    code: |
+      for i := 1 to 9 do
+        Write(i);
     level: 2
     variants:
-      - только начало интервала
-      - только конец интервала
-      - начало и конец интервала!!
-      - не включает ни начало, ни конец
+      - 12345678
+      - 2345678
+      - 123456789
+      - 23456789
   
   - question: Как сделать так, чтобы выводилось верное утверждение?
     code: |
@@ -121,8 +124,7 @@ questions:
       - Удалить строчку \verb|i := 0;|!!
       - Всё и так верно!!
       - Ни одно из приведённых решений не поможет
-  
-  
+    
   - question: Как сделать так, чтобы выводилось верное утверждение?
     code: |
       fact := 1;
@@ -132,8 +134,8 @@ questions:
     level: 3
     variants:
       - Надо сместить конечную границу цикла с 10 до 11
-      - Удалить \verb|;| после \verb|for i := 1 to 10|
-      - Всё и так верно!!
+      - Удалить \verb|;| после \verb|for i := 1 to 10|!!
+      - Всё и так верно
       - Ни одно из приведённых решений не поможет
   
   - question: Как сделать так, чтобы выводилось верное утверждение?
@@ -145,7 +147,7 @@ questions:
         sum := sum + i;
         i := i + 1;
       end;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 4
     variants:
       - Вместо \verb|sum := 1;| поместить в \verb|sum| \verb|0|!!
@@ -162,7 +164,7 @@ questions:
         sum := sum + i;
         i := i + 1;
       end;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 4
     variants:
       - Вместо \verb|sum := 0;| поместить в \verb|sum| \verb|1|
@@ -179,7 +181,7 @@ questions:
         sum := sum + i;
         i := i + 1;
       end;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 4
     variants:
       - Вместо \verb|i := i + 1;| увеличивать \verb|i| на \verb|2|
@@ -196,7 +198,7 @@ questions:
         sum := sum + i;
         i := i + 2;
       end;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 4
     variants:
       - Вместо \verb|i := i + 2;| увеличивать \verb|i| на \verb|1|!!
@@ -211,7 +213,7 @@ questions:
       while i <= 10 do
         sum := sum + i;
         i := i + 2;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 4
     variants:
       - Вместо \verb|i := i + 2;| увеличивать \verb|i| на \verb|1|
@@ -226,7 +228,7 @@ questions:
       while i <= 10 do
         sum := sum + i;
         i := i + 1;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 4
     variants:
       - Взять две операции после \verb|do| в блок \verb|begin-end|!!
@@ -243,7 +245,7 @@ questions:
         sum := sum + i;
         i := i + 1;
       end;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 4
     variants:
       - Вынести две операции после \verb|do| из блока \verb|begin-end|
@@ -260,7 +262,7 @@ questions:
         sum := sum + i;
         i := i + 1;
       end;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 4
     variants:
       - Исправить условие цикла \verb|i < 10| на \verb|i <= 10|!!
@@ -276,7 +278,7 @@ questions:
         sum := sum + i;
         i := i + 1;
       until i > 10;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 5
     variants:
       - Вместо \verb|sum := 1;| поместить в \verb|sum| \verb|0|!!
@@ -293,7 +295,7 @@ questions:
         sum := sum + i;
         i := i + 1;
       until i > 10;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 5
     variants:
       - Вместо \verb|sum := 0;| поместить в \verb|sum| \verb|1|
@@ -310,7 +312,7 @@ questions:
         sum := sum + i;
         i := i + 1;
       until i > 10;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 5
     variants:
       - Взять две операции после \verb|repeat| в блок \verb|begin-end|
@@ -326,7 +328,7 @@ questions:
         sum := sum + i;
         i := i + 2;
       until i > 10;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 5
     variants:
       - Вместо \verb|i := i + 2;| увеличивать \verb|i| на \verb|1|!!
@@ -342,7 +344,7 @@ questions:
         sum := sum + i;
         i := i + 1;
       until i >= 10;
-      WriteLn('$\sum$ 10 = ', sum);
+      WriteLn('1 + 2 + ... + 10 = ', sum);
     level: 5
     variants:
       - Изменить условие цикла на \verb|i >= 11|!!
