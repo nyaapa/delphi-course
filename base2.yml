@@ -159,7 +159,7 @@ questions:
         Write('6');
         Write('0')
       else
-        Write('24')';
+        Write('24');
       WriteLn(' секунд в минуте');
     level: 4
     variants:
