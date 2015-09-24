@@ -98,7 +98,7 @@ questions:
       - \verb|WriteLn( Time / 60 );|
       - \verb|WriteLn( Time / 60 * 60 );|
       - \verb|WriteLn( Time / (60 * 60) );|!!
-      - \verb|WriteLn( Time / 36 * 100 );|!!
+      - \verb|WriteLn( Time / 36 * 100 );|
   
   - question: В программе переменная \verb|Angle| имеет тип \verb|Integer| и хранит величину угла между векторами в градусах. Какая команда выведет значение \verb|Angle| в радианах? В программе также определена константа \verb|PI = |$\pi$. 1 радиан равен $180 /\pi$.
     level: 3
