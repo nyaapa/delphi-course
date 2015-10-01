@@ -5,7 +5,6 @@ import (
 	"os"
 	"io/ioutil"
 	"math/rand"
-	"time"
 	"sort"
 	"bytes"
 	"bufio"
@@ -22,11 +21,6 @@ type Test struct {
 	Level string
 	Code string
 	No int
-}
-
-type TestAnswers struct {
-	No int
-	Answers string
 }
 
 type Tests []Test
@@ -52,14 +46,12 @@ func (slice Tests) Swap(i, j int) {
 
 var (
 	base = kingpin.Flag("base", "Questions base.").Required().String()
+	variant = kingpin.Flag("variant", "Job variant.").Required().Int()
 	answers = kingpin.Flag("answers", "Print answers.").Default("false").Bool()
 	limit = kingpin.Flag("limit", "Questions total limit.").Default("10").Int()
 )
 
-func shuffle(arr []Test) {
-	t := time.Now()
-	rand.Seed(int64(t.Nanosecond()))
-	
+func shuffle(arr []Test) {	
 	for i := len(arr) - 1; i > 0; i-- {
 		j := rand.Intn(i)
 		arr[i], arr[j] = arr[j], arr[i]
@@ -69,6 +61,15 @@ func shuffle(arr []Test) {
 func main() {
 	kingpin.Version("0.0.1")
 	kingpin.Parse()
+// common
+	answerRegexp, err := regexp.Compile(`!!$`)
+	if err != nil {
+		panic(err)
+	}
+// we need re-execution
+	rand.Seed(int64(*variant))
+
+// read base
 	if _, err := os.Stat(*base); os.IsNotExist(err) {
 		panic(fmt.Sprintf("No such file: %s", *base))
 	}
@@ -84,60 +85,60 @@ func main() {
 		panic(fmt.Sprintf("Error in yaml unmarshall: %s", err))
 	}
 
+// fetch questions
 	qBase := rawBase.Questions
 
-	for i, _ := range qBase {
-		qBase[i].No = i + 1
+// fetch at least one per level
+	selected := make(map[*Test]bool)
+	selectedLevels := make(map[string]bool)
+	shuffle(qBase)
+	for i, test := range qBase {
+		if !selectedLevels[test.Level] {
+			selected[&qBase[i]] = true
+			selectedLevels[test.Level] = true
+		}
 	}
-
-	answerRegexp, err := regexp.Compile(`!!$`)
-	if err != nil {
-		panic(err)
+// add random tests
+	for len(selected) < *limit && len(selected) < len(qBase) {
+		i := rand.Int() % len(qBase)
+		for selected[&qBase[i]] {
+			i = (i + 1) % len(qBase)
+		}
+		selected[&qBase[i]] = true
 	}
+// flatten
+	selectedQuestions := make(Tests, 0, len(selected))
+	for key := range selected {
+		selectedQuestions = append(selectedQuestions, *key)
+	}
+// enumerate them
+	sort.Sort(selectedQuestions)
+	for key := range selectedQuestions {
+		selectedQuestions[key].No = key + 1
+	}
+	
 	if *answers {
-		tmpl, _ := template.ParseFiles("answers.tpl")
-		var withAnswers struct { Questions []TestAnswers; Title string }
-		withAnswers.Title = rawBase.Title
-		for _, raw := range qBase {
-			test := TestAnswers{ raw.No, "" }
+		for _, raw := range selectedQuestions {
+			fmt.Printf("%d:", raw.No);
 			for i, variant := range raw.Variants {
 				if answerRegexp.MatchString(variant) {
-					test.Answers = fmt.Sprintf("%s %d", test.Answers, i + 1)
+					fmt.Printf(" %d", i + 1)
 				}
 			}
-			withAnswers.Questions = append(withAnswers.Questions, test)
+			fmt.Println()
 		}
-		tmpl.Execute(os.Stdout, withAnswers)
 	} else {
-		selected := make(map[*Test]bool)
-		selectedLevels := make(map[string]bool)
-		shuffle(qBase)
-		for i, test := range qBase {
-			if !selectedLevels[test.Level] {
-				selected[&qBase[i]] = true
-				selectedLevels[test.Level] = true
-			}
-			for j, _ := range test.Variants {
-				qBase[i].Variants[j] = answerRegexp.ReplaceAllString(qBase[i].Variants[j], "")
-			}
-		}
-		for len(selected) < *limit && len(selected) < len(qBase) {
-			i := rand.Int() % len(qBase)
-			for selected[&qBase[i]] {
-				i = (i + 1) % len(qBase)
-			}
-			selected[&qBase[i]] = true
-		}
-		selectedQuestions := make(Tests, 0, len(selected))
-		for key := range selected {
-			selectedQuestions = append(selectedQuestions, *key)
-		}
-		sort.Sort(selectedQuestions)
 	
+		for i, test := range selectedQuestions {
+			for j, _ := range test.Variants {
+				selectedQuestions[i].Variants[j] = answerRegexp.ReplaceAllString(selectedQuestions[i].Variants[j], "")
+			}
+		}
+
 		tmpl, _ := template.ParseFiles("test.tpl")
 		var out bytes.Buffer
 		writer := bufio.NewWriter(&out)
-		tmpl.Execute(writer, struct { Questions []Test; Title string }{ selectedQuestions, rawBase.Title })
+		tmpl.Execute(writer, struct { Questions []Test; Title string }{ selectedQuestions, fmt.Sprintf("%s №%d", rawBase.Title, *variant) })
 		writer.Flush()
 	
 		reg, err := regexp.Compile(`\n[^\S\n]*\n`)
