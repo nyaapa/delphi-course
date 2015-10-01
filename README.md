@@ -10,7 +10,8 @@ Run generator:
 ```go build gen.go && ./gen --base=base1.yml --variant 10  > out && pdflatex out && evince out.pdf```
 
 Generate answers:
-```> go build gen.go && ./gen --base=base1.yml --variant 10 --answers
+```
+> go build gen.go && ./gen --base=base1.yml --variant 10 --answers
 1: 2
 2: 1
 3: 3 4
