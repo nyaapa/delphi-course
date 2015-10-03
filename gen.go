@@ -21,6 +21,7 @@ type Test struct {
 	Level string
 	Code string
 	No int
+	SourceNo int
 }
 
 type Tests []Test
@@ -35,7 +36,7 @@ func (slice Tests) Less(i, j int) bool {
 	} else if slice[i].Level > slice[j].Level {
 		return false
 	} else {
-		return slice[i].No < slice[j].No
+		return slice[i].SourceNo < slice[j].SourceNo
 	}
 }
 
@@ -93,6 +94,7 @@ func main() {
 	selectedLevels := make(map[string]bool)
 	shuffle(qBase)
 	for i, test := range qBase {
+		qBase[i].SourceNo = i
 		if !selectedLevels[test.Level] {
 			selected[&qBase[i]] = true
 			selectedLevels[test.Level] = true
@@ -100,7 +102,7 @@ func main() {
 	}
 // add random tests
 	for len(selected) < *limit && len(selected) < len(qBase) {
-		i := rand.Int() % len(qBase)
+		i := rand.Intn(len(qBase))
 		for selected[&qBase[i]] {
 			i = (i + 1) % len(qBase)
 		}
