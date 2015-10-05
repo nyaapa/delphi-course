@@ -39,7 +39,7 @@
 {{range .Questions}}
 	\begin{framed}
 		{{if .Code}}
-			\begin{minipage}[t]{0.45\textwidth}
+			\begin{minipage}[t]{0.60\textwidth}
 			\flushleft
 		{{end}}
 		{{.No}}. {{.Question}}
@@ -53,10 +53,10 @@
 		{{if .Code}}
 			\end{minipage}
 			\hfill
-			\begin{minipage}[t]{0.50\textwidth}
+			\begin{minipage}[t]{0.35\textwidth}
 			\hspace*{0pt}
 			\begin{lstlisting}[mathescape=true]
-			{{ .Code }}
+{{ .Code }}
 			\end{lstlisting}
 			\end{minipage}
 		{{end}}
