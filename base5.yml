@@ -23,7 +23,7 @@ questions:
       - Ключевое слово
       - Выражение
 
-  - question: 'В каком варианте элементов массивов не меньше 10?'
+  - question: 'В каком варианте элементов массива не меньше 10?'
     level: 0
     variants:
       - 'x: array[1..11] of boolean!!'
@@ -31,7 +31,7 @@ questions:
       - 'x: array[0..9] of char!!'
       - 'x: array[10] of real'
 
-  - question: 'Какие из объявлений массива правильное?'
+  - question: 'Какие из объявлений массива правильные?'
     level: 0
     variants:
       - 'x: array[1..11] of boolean!!'
@@ -47,7 +47,7 @@ questions:
       - 'array!!'
       - 'of!!'
 
-  - question: 'Что находится в переменной \verb|res|, при \verb|a: array[1..6] of Integer = (1, 2, 3, 4, 5, 6)|'
+  - question: 'Что находится в переменной \verb|res| при \verb|a: array[1..6] of Integer = (1, 2, 3, 4, 5, 6);|'
     code: |
       res := 0;
       for i := 1 to 6 div 2 do
@@ -60,7 +60,7 @@ questions:
       - 720
       - Ошибка в коде
 
-  - question: 'Что находится в переменной \verb|res|, при \verb|a: array[1..6] of Integer = (1, 2, 3, 4, 5, 6)|'
+  - question: 'Что находится в переменной \verb|res| при \verb|a: array[1..6] of Integer = (1, 2, 3, 4, 5, 6);|'
     code: |
       res := 1;
       for i := 1 to 6 div 2 do
@@ -73,7 +73,7 @@ questions:
       - 720
       - Ошибка в коде
 
-  - question: 'Что находится в переменной \verb|res|, при \verb|a: array[1..6] of Integer = (1, 2, 3, 4, 5, 6)|'
+  - question: 'Что находится в переменной \verb|res| при \verb|a: array[1..6] of Integer = (1, 2, 3, 4, 5, 6);|'
     code: |
       res := 0;
       for i := 1 to 5 do
@@ -86,7 +86,7 @@ questions:
       - 720
       - Ошибка в коде
   
-  - question: 'Что находится в переменной \verb|res|, при \verb|a: array[1..6] of Integer = (1, 2, 3, 4, 5, 6)|'
+  - question: 'Что находится в переменной \verb|res| при \verb|a: array[1..6] of Integer = (1, 2, 3, 4, 5, 6);|'
     code: |
       res := 1;
       for i := 1 to 5 do
@@ -99,7 +99,7 @@ questions:
       - 720
       - Ошибка в коде
   
-  - question: 'Что находится в переменной \verb|res|, при \verb|a: array[1..N] of Integer|, \verb|N > 2|'
+  - question: 'Что находится в переменной \verb|res| при \verb|a: array[1..N] of Integer| и условии, что \verb|N > 2|'
     code: |
       res := 0;
       for i := 1 to N-1 do
@@ -107,13 +107,14 @@ questions:
           res := a[i];
     level: 3
     variants:
-      - Минимальное число в массиве
-      - Минимальное число в неотрицательном массиве!!
-      - Минимальное число в положительном массиве!!
-      - Максимальное число в массиве
+      - Минимальный элемент массива
+      - Минимальный элемент массива или ноль!!
+      - Максимальный элемент массива
+      - Максимальный элемент массива или ноль
+      - Ноль
       - Ошибка в коде
   
-  - question: 'Что находится в переменной \verb|res|, при \verb|a: array[1..N] of Integer|, \verb|N > 2|'
+  - question: 'Что находится в переменной \verb|res| при \verb|a: array[1..N] of Integer| и условии, что \verb|N > 2|'
     code: |
       res := 0;
       for i := 1 to N-1 do
@@ -121,41 +122,42 @@ questions:
           res := a[i];
     level: 3
     variants:
-      - Максимальное число в массиве
-      - Максимальное число в неотрицательном массиве!!
-      - Максимальное число в положительном массиве!!
-      - Минимальное число в массиве
+      - Минимальный элемент массива
+      - Минимальный элемент массива или ноль
+      - Максимальный элемент массива
+      - Максимальный элемент массива или ноль!!
+      - Ноль
       - Ошибка в коде
 
-  - question: 'Что находится в переменной \verb|res|, при \verb|a: array[1..N] of Integer|, \verb|N > 2|'
+  - question: 'Что находится в переменной \verb|res| при \verb|a: array[1..N] of Integer| и условии, что \verb|N > 2|'
     code: |
-      res := 0;
+      res := 1;
       for i := 1 to N-1 do
         if a[res] < a[i] then
           res := i;
     level: 3
     variants:
       - Индекс минимального числа в массиве
-      - Индекс минимального числа в неотрицательном массиве!!
-      - Минимальное число в положительном массиве
-      - Максимальное число в массиве
+      - Индекс минимального числа в массиве или единица!!
+      - Индекс максимального числа в массиве
+      - Индекс максимального числа в массиве или единица
       - Ошибка в коде
   
-  - question: 'Что находится в переменной \verb|res|, при \verb|a: array[1..N] of Integer|, \verb|N > 2|'
+  - question: 'Что находится в переменной \verb|res| при \verb|a: array[1..N] of Integer| и условии, что \verb|N > 2|'
     code: |
-      res := 0;
+      res := 1;
       for i := 1 to N-1 do
         if a[res] > a[i] then
           res := i;
     level: 3
     variants:
+      - Индекс минимального числа в массиве
+      - Индекс минимального числа в массиве или единица
       - Индекс максимального числа в массиве
-      - Индекс максимального числа в неотрицательном массиве!!
-      - Максимальное число в положительном массиве
-      - Минимальное число в массиве
+      - Индекс максимального числа в массиве или единица!!
       - Ошибка в коде
 
-  - question: 'Что находится в переменной \verb|res|, при \verb|a: array[1..N] of Integer|, \verb|N > 2|'
+  - question: 'Что находится в переменной \verb|res| при \verb|a: array[1..N] of Integer| и условии, что \verb|N > 2|'
     code: |
       res := 0;
       for i := 1 to N-1 do
@@ -164,26 +166,12 @@ questions:
     level: 3
     variants:
       - Индекс минимального числа в массиве
-      - Индекс минимального числа в неотрицательном массиве
-      - Минимальное число в положительном массиве
-      - Максимальное число в массиве
-      - Ошибка в коде!!
-  
-  - question: 'Что находится в переменной \verb|res|, при \verb|a: array[1..N] of Integer|, \verb|N > 2|'
-    code: |
-      res := 0;
-      for i := 1 to N-1 do
-        if a[res] > a[i] then
-          res := a[i];
-    level: 3
-    variants:
+      - Индекс минимального числа в массиве или ноль
       - Индекс максимального числа в массиве
-      - Индекс максимального числа в неотрицательном массиве
-      - Максимальное число в положительном массиве
-      - Максимальное число в массиве
+      - Индекс максимального числа в массиве или ноль
       - Ошибка в коде!!
 
-  - question: 'В итоге массив \verb|a: array[1..N] of Integer|, \verb|N > 2| будет'
+  - question: 'В результате выполнения приведённого кода массив \verb|a: array[1..N] of Integer| при \verb|N > 2| будет'
     code: |
       for i := 1 to N do
       begin
@@ -199,10 +187,10 @@ questions:
     variants:
       - Отсортирован по возрастанию
       - Отсортирован по убыванию
-      - Неотсортирован!!
+      - Не отсортирован!!
       - 'Испорчен: в нём потеряются безвозвратно элементы'
       
-  - question: 'В итоге массив \verb|a: array[1..N] of Integer|, \verb|N > 2| будет'
+  - question: 'В итоге массив \verb|a: array[1..N] of Integer| при \verb|N > 2| будет'
     code: |
       for i := 1 to N do
       begin
@@ -221,7 +209,7 @@ questions:
       - 'Испорчен: в нём потеряются безвозвратно элементы!!'
 
 
-  - question: 'В итоге массив \verb|a: array[1..N] of Integer|, \verb|N > 2| будет'
+  - question: 'В итоге массив \verb|a: array[1..N] of Integer| при \verb|N > 2| будет'
     code: |
       for i := 1 to N do
       begin
@@ -240,7 +228,7 @@ questions:
       - 'Испорчен: в нём потеряются безвозвратно элементы!!'
       
       
-  - question: 'В итоге массив \verb|a: array[1..N] of Integer|, \verb|N > 2| будет'
+  - question: 'В итоге массив \verb|a: array[1..N] of Integer| при \verb|N > 2| будет'
     code: |
       for i := 1 to N do
       begin
@@ -259,7 +247,7 @@ questions:
       - Неотсортирован!!
       - 'Испорчен: в нём потеряются безвозвратно элементы'
 
-  - question: 'В итоге массив \verb|a: array[1..N] of Integer|, \verb|N > 2| будет'
+  - question: 'В итоге массив \verb|a: array[1..N] of Integer| при \verb|N > 2| будет'
     code: |
       for i := 1 to N do
       begin
@@ -278,7 +266,7 @@ questions:
       - Неотсортирован
       - 'Испорчен: в нём потеряются безвозвратно элементы'
 
-  - question: 'В итоге массив \verb|a: array[1..N] of Integer|, \verb|N > 2| будет'
+  - question: 'В итоге массив \verb|a: array[1..N] of Integer| при \verb|N > 2| будет'
     code: |
       for i := 1 to N do
       begin
@@ -298,7 +286,7 @@ questions:
       - 'Испорчен: в нём потеряются безвозвратно элементы'
       
       
-  - question: 'В итоге массив \verb|a: array[1..N] of Integer|, \verb|N > 2| будет'
+  - question: 'В итоге массив \verb|a: array[1..N] of Integer| при \verb|N > 2| будет'
     code: |
       for i := 1 to N do
       begin
@@ -317,7 +305,7 @@ questions:
       - Неотсортирован
       - 'Испорчен: в нём потеряются безвозвратно элементы'
 
-  - question: 'В итоге массив \verb|a: array[1..N] of Integer|, \verb|N > 2| будет'
+  - question: 'В итоге массив \verb|a: array[1..N] of Integer| при \verb|N > 2| будет'
     code: |
       for i := 1 to N do
       begin
@@ -337,7 +325,7 @@ questions:
       - 'Испорчен: в нём потеряются безвозвратно элементы'
 
       
-  - question: 'В итоге массив \verb|a: array[1..N] of Integer|, \verb|N > 2| будет'
+  - question: 'В итоге массив \verb|a: array[1..N] of Integer| при \verb|N > 2| будет'
     code: |
       for i := 1 to N-1 do
       begin
@@ -356,7 +344,7 @@ questions:
       - Неотсортирован
       - 'Испорчен: в нём потеряются безвозвратно элементы'
 
-  - question: 'В итоге массив \verb|a: array[1..N] of Integer|, \verb|N > 2| будет'
+  - question: 'В итоге массив \verb|a: array[1..N] of Integer| при \verb|N > 2| будет'
     code: |
       for i := 1 to N-1 do
       begin
