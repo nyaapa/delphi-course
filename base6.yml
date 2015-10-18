@@ -1,0 +1,23 @@
+title: Двумерные массивы. Организация программ (процедуры и функции).
+questions:
+  - question: 'В каких из объявлений тип ArrayType представляет двумерный массив?'
+    level: 1
+    variants:
+      - 'ArrayType = Array of Array[1..10] of Integer;!!'
+      - 'ArrayType = Array[0..20] of Array[1..10] of Integer;!!'
+      - 'ArrayType = Array[0..20] of Array of Integer;!!'
+      - 'ArrayType = Array of Array of Integer;!!'
+      - 'ArrayType = Array of Integer;!!'
+      - 'ArrayType = Array[1..20] of Integer;!!'
+
+  - question: 'Отметьте корректные операции обращения к элементу двумерного массива m, считать, что \verb|i,j: Integer|.'
+    level: 1
+    variants:
+      - m[i][j]
+      - m[i,j]
+      - m[i]
+      - m[i],[j]
+      - m(i,j)
+      - m(i)
+      - m(i)(j)
+
