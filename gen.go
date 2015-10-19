@@ -18,7 +18,7 @@ import (
 type Test struct {
 	Question string
 	Variants []string
-	Level string
+	Level int
 	Code string
 	No int
 	SourceNo int
@@ -91,7 +91,7 @@ func main() {
 
 // fetch at least one per level
 	selected := make(map[*Test]bool)
-	selectedLevels := make(map[string]bool)
+	selectedLevels := make(map[int]bool)
 	shuffle(qBase)
 	for i, test := range qBase {
 		qBase[i].SourceNo = i

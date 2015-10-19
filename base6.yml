@@ -20,8 +20,92 @@ questions:
       - 'm[1,5]!!'
       - 'm(1)'
       - 'm(1)(5)'
-      
-    - question: 'Функция в Delphi:'
+
+  - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
+    level: 2
+    variants:
+      - 0
+      - 1!!
+      - 2
+      - 3
+    code: |
+      const
+        a = (
+          (1, 2, 3),
+          (8, 9, 4),
+          (7, 6, 5)
+        );
+      begin
+        k := 0;
+        for i := Low(a) to High(a) do
+          if a[i][k] > a[k][k] then
+            k := i;
+      end.
+
+  - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
+    level: 2
+    variants:
+      - 0
+      - 1
+      - 2!!
+      - 3
+    code: |
+      const
+        a = (
+          (1, 2, 3),
+          (8, 0, 4),
+          (7, 6, 5)
+        );
+      begin
+        k := 0;
+        for i := Low(a) to High(a) do
+          if a[i][k] > a[k][k] then
+            k := i;
+      end.
+
+  - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
+    level: 2
+    variants:
+      - 0
+      - 1!!
+      - 2
+      - 3
+    code: |
+      const
+        a = (
+          (9, 3, 6),
+          (2, 5, 8),
+          (4, 7, 9)
+        );
+      begin
+        k := High(a);
+        for i := Low(a) to High(a) do
+          if a[i][k] < a[k][k] then
+            k := i;
+      end.
+
+  - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
+    level: 2
+    variants:
+      - 0!!
+      - 1
+      - 2
+      - 3
+    code: |
+      const
+        a = (
+          (1, 3, 6),
+          (2, 5, 8),
+          (4, 7, 9)
+        );
+      begin
+        k := High(a);
+        for i := Low(a) to High(a) do
+          if a[i][k] < a[k][k] then
+            k := i;
+      end.
+
+  - question: 'Функция в Delphi:'
     level: 10
     variants:
       - Не возвращает или возвращает только одно значение как результат
@@ -30,7 +114,7 @@ questions:
       - Возвращает неограниченное число результатов
       - Не возвращает результат
 
-    - question: 'Процедура в Delphi:'
+  - question: 'Процедура в Delphi:'
     level: 10
     variants:
       - Не возвращает или возвращает только одно значение как результат
@@ -39,7 +123,7 @@ questions:
       - Возвращает неограниченное число результатов
       - Не возвращает результат!!
 
-    - question: 'Что желательно использовать когда нужно вернуть один результат:'
+  - question: 'Что желательно использовать когда нужно вернуть один результат:'
     level: 10
     variants:
       - Функцию!!
@@ -47,7 +131,7 @@ questions:
       - Подпрограмму
       - Программу
 
-    - question: 'Что желательно использовать когда не нужно возвращаеть результат:'
+  - question: 'Что желательно использовать когда не нужно возвращаеть результат:'
     level: 10
     variants:
       - Функцию
@@ -55,7 +139,7 @@ questions:
       - Подпрограмму
       - Программу
 
-    - question: 'Что желательно использовать когда нужно вернуть более одного результата:'
+  - question: 'Что желательно использовать когда нужно вернуть более одного результата:'
     level: 10
     variants:
       - Функцию!!
@@ -63,7 +147,7 @@ questions:
       - Подпрограмму!!
       - Программу
 
-    - question: 'Что означет добавление аргумента подпрограммы ( формального ) словом \verb|out|:'
+  - question: 'Что означет добавление аргумента подпрограммы ( формального ) словом \verb|out|:'
     level: 11
     variants:
       - Изменения значения аргумента сохранится в переданной переменной!!
@@ -72,7 +156,7 @@ questions:
       - В качестве такого аргумента можно использовать не-переменные
       - Этот аргумент можно использовать для вычислений внутри подпрограммы
 
-    - question: 'Что означет добавление аргумента подпрограммы ( формального ) словом \verb|const|:'
+  - question: 'Что означет добавление аргумента подпрограммы ( формального ) словом \verb|const|:'
     level: 11
     variants:
       - Изменения значения аргумента сохранится в переданной переменной
@@ -81,7 +165,7 @@ questions:
       - В качестве такого аргумента можно использовать не-переменные!!
       - Этот аргумент можно использовать для вычислений внутри подпрограммы!!
 
-    - question: 'Что означет добавление аргумента подпрограммы ( формального ) словом \verb|var|:'
+  - question: 'Что означет добавление аргумента подпрограммы ( формального ) словом \verb|var|:'
     level: 11
     variants:
       - Изменения значения аргумента сохранится в переданной переменной!!
@@ -107,3 +191,187 @@ questions:
       - 'abs[x]'
       - 'abs(x)!!'
       - 'abs(42)'
+
+  - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
+    level: 13
+    variants:
+      - 81
+      - 9
+      - 27!!
+      - 3
+    code: |
+      function func(x: Integer): Integer;
+      begin
+        result := x;
+        x := x * x;
+        result := result * x;
+      end;
+      begin
+        k := 3;
+        k := func(k);
+      end.
+
+  - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
+    level: 13
+    variants:
+      - 81
+      - 9!!
+      - 27
+      - 3
+    code: |
+      function func(x: Integer): Integer;
+      begin
+        result := x;
+        x := x * x;
+        result := result * result;
+      end;
+      begin
+        k := 3;
+        k := func(k);
+      end.
+
+  - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
+    level: 13
+    variants:
+      - 81
+      - 9
+      - Ошибка в коде!!
+      - 3
+    code: |
+      procedure proc(out x: Integer);
+      begin
+        x := x * x;
+      end;
+      begin
+        k := 3;
+        func(k);
+      end.
+
+  - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
+    level: 13
+    variants:
+      - 81
+      - 9!!
+      - Ошибка в коде
+      - 3
+    code: |
+      procedure proc(var x: Integer);
+      begin
+        x := x * x;
+      end;
+      begin
+        k := 3;
+        func(k);
+      end.
+
+  - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
+    level: 13
+    variants:
+      - 81
+      - 9
+      - Ошибка в коде
+      - 3!!
+    code: |
+      procedure proc(x: Integer);
+      begin
+        x := x * x;
+      end;
+      begin
+        k := 3;
+        func(k);
+      end.
+
+  - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
+    level: 13
+    variants:
+      - 81
+      - 9
+      - Ошибка в коде!!
+      - 3
+    code: |
+      procedure proc(const x: Integer);
+      begin
+        x := x * x;
+      end;
+      begin
+        k := 3;
+        func(k);
+      end.
+
+  - question: 'Что будет находиться в переменных \verb|a| и \verb|b| в результате выполнения кода?'
+    level: 14
+    variants:
+      - \verb|a=4|, \verb|b=4|
+      - \verb|a=3|, \verb|b=3|
+      - \verb|a=4|, \verb|b=3|!!
+      - \verb|a=3|, \verb|b=4|
+    code: |
+      function xchg(var x: Integer; y: Integer): Integer;
+      begin
+        result := x;
+        x := y;
+      end;
+      begin
+        a := 3;
+        b := 4;
+        b := result(a, b);
+      end.
+
+  - question: 'Что будет находиться в переменных \verb|a| и \verb|b| в результате выполнения кода?'
+    level: 14
+    variants:
+      - \verb|a=4|, \verb|b=4|
+      - \verb|a=3|, \verb|b=3|!!
+      - \verb|a=4|, \verb|b=3|
+      - \verb|a=3|, \verb|b=4|
+    code: |
+      function xchg(x: Integer; var y: Integer): Integer;
+      begin
+        result := x;
+        x := y;
+      end;
+      begin
+        a := 3;
+        b := 4;
+        b := result(a, b);
+      end.
+
+  - question: 'Что будет находиться в переменных \verb|a| и \verb|b| в результате выполнения кода?'
+    level: 14
+    variants:
+      - \verb|a=4|, \verb|b=4|!!
+      - \verb|a=3|, \verb|b=3|
+      - \verb|a=4|, \verb|b=3|
+      - \verb|a=3|, \verb|b=4|
+    code: |
+      function xchg(var x: Integer; var y: Integer): Integer;
+      begin
+        x := y;
+        result := x;
+        y := result;
+      end;
+      begin
+        a := 3;
+        b := 4;
+        b := result(a, b);
+      end.
+
+  - question: 'Что будет находиться в переменных \verb|a| и \verb|b| в результате выполнения кода?'
+    level: 14
+    variants:
+      - \verb|a=4|, \verb|b=4|
+      - \verb|a=3|, \verb|b=3|
+      - \verb|a=4|, \verb|b=3|
+      - \verb|a=3|, \verb|b=4|!!
+    code: |
+      function xchg(x: Integer; var y: Integer): Integer;
+      begin
+        x := y;
+        result := x;
+        y := result;
+      end;
+      begin
+        a := 3;
+        b := 4;
+        b := result(a, b);
+      end.
