@@ -67,8 +67,8 @@ questions:
     level: 2
     variants:
       - 0
-      - 1!!
-      - 2
+      - 1
+      - 2!!
       - 3
     code: |
       const
