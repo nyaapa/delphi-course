@@ -36,7 +36,7 @@ questions:
           (7, 6, 5)
         );
       begin
-        k := 0;
+        k := Low(a);
         for i := Low(a) to High(a) do
           if a[i][k] > a[k][k] then
             k := i;
@@ -57,7 +57,7 @@ questions:
           (7, 6, 5)
         );
       begin
-        k := 0;
+        k := Low(a);
         for i := Low(a) to High(a) do
           if a[i][k] > a[k][k] then
             k := i;
@@ -244,7 +244,7 @@ questions:
       end;
       begin
         k := 3;
-        func(k);
+        proc(k);
       end.
 
   - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
@@ -261,7 +261,7 @@ questions:
       end;
       begin
         k := 3;
-        func(k);
+        proc(k);
       end.
 
   - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
@@ -278,7 +278,7 @@ questions:
       end;
       begin
         k := 3;
-        func(k);
+        proc(k);
       end.
 
   - question: 'Что будет находиться в переменной \verb|k| в результате выполнения кода?'
@@ -295,7 +295,7 @@ questions:
       end;
       begin
         k := 3;
-        func(k);
+        proc(k);
       end.
 
   - question: 'Что будет находиться в переменных \verb|a| и \verb|b| в результате выполнения кода?'
@@ -314,7 +314,7 @@ questions:
       begin
         a := 3;
         b := 4;
-        b := result(a, b);
+        b := xchg(a, b);
       end.
 
   - question: 'Что будет находиться в переменных \verb|a| и \verb|b| в результате выполнения кода?'
@@ -333,7 +333,7 @@ questions:
       begin
         a := 3;
         b := 4;
-        b := result(a, b);
+        b := xchg(a, b);
       end.
 
   - question: 'Что будет находиться в переменных \verb|a| и \verb|b| в результате выполнения кода?'
@@ -353,7 +353,7 @@ questions:
       begin
         a := 3;
         b := 4;
-        b := result(a, b);
+        b := xchg(a, b);
       end.
 
   - question: 'Что будет находиться в переменных \verb|a| и \verb|b| в результате выполнения кода?'
@@ -373,7 +373,7 @@ questions:
       begin
         a := 3;
         b := 4;
-        b := result(a, b);
+        b := xchg(a, b);
       end.
 
   - question: 'Какими значениями будет заполнен массив \verb|a : Array[0..N] of Integer| в результате выполнения данной программы? Выпишите первые 4 элемента.'
